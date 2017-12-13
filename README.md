@@ -3,6 +3,12 @@ authing js oauth sdk
 
 ----------
 
+## 安装
+
+``` shell
+$ npm install authing-js-oauth --save
+```
+
 ## 需要编写后端代码的OAuth调用方法
 
 ##### ```第一步```：在对应开放平台中配置好自己的回调URL；
