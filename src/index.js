@@ -3,8 +3,8 @@ var axios = require('axios');
 var OAuth = function(params) {
 
 	this.oAuthUrls = {
-		wechat: 'http://oauth.authing.cn/oauth/wechat/redirect',
-		github: 'http://oauth.authing.cn/oauth/github/redirect'
+		wechat: 'https://oauth.authing.cn/oauth/wechat/redirect',
+		github: 'https://oauth.authing.cn/oauth/github/redirect'
 	}
 
 	this.requiredParams = ['code', 'state'];
