@@ -9,11 +9,11 @@
 
 Client ID       | Client Secret | Redirect
 --------------- | -------------------- | -------------------------------
-在OAuth平台上申请的APP ID或Client ID    |  OAuth平台提供的Client Secret    |  成功或失败后的回调URL
+在 OAuth 平台上申请的 APP ID 或 Client ID    |  OAuth 平台提供的 Client Secret    |  成功或失败后的回调 URL
 
 ### 回调参数说明
 
-注册成功或失败后都会回调Redirect中填写的网址，会附带三个参数：
+注册成功或失败后都会回调 Redirect 中填写的网址，会附带三个参数：
 
 code            | message              | data
 --------------- | -------------------- | -------------------------------
@@ -21,8 +21,8 @@ code            | message              | data
 
 ### Authing回调URL和对应OAuth开放平台中的回调URL的区别
 
- - Authing回调URL由Authing调用，会返回最终用户数据，一般是客户端URL，呈现给用户看；
- - 对应OAuth开放平台由对应OAuth平台调用，返回的是对应OAuth平台中的用户数据（仅在对应的第三方平台中配置了Authing的回调地址才这么做，否则还是回调至用户配置好的URL中）；
+ - Authing 回调 URL 由 Authing 调用，会返回最终用户数据，一般是客户端 URL，呈现给用户看；
+ - 对应 OAuth 开放平台由对应 OAuth 平台调用，返回的是对应 OAuth 平台中的用户数据（仅在对应的第三方平台中配置了 Authing 的回调地址才这么做，否则还是回调至用户配置好的 URL 中）；
 
 ----------
 
@@ -30,25 +30,25 @@ code            | message              | data
 
 ----------
 
-#### 不需要编写后端代码的OAuth调用方法
+#### 不需要编写后端代码的 OAuth 调用方法
 
 ##### Github
 
-将Github OAuth设置中的回调地址改为```http://oauth.authing.cn/oauth/github/redirect```.
-将Github回调至此URL之后，Authing会跳至开发者配置好的Callback URL中。
+将 Github OAuth 设置中的回调地址改为```http://oauth.authing.cn/oauth/github/redirect```.
+将 Github 回调至此 URL 之后，Authing 会跳至开发者配置好的 Callback URL 中。
 
 ##### 微信
 
 将微信开放平台中的回调地址改为```http://oauth.authing.cn/oauth/wechat/redirect```.
-微信回调至此URL之后，Authing会跳至开发者配置好的Callback URL中。
+微信回调至此 URL 之后，Authing 会跳至开发者配置好的 Callback URL 中。
 
 ----------
 
-#### 需要编写后端代码的OAuth调用方法
+#### 需要编写后端代码的 OAuth 调用方法
 
- - ```第一步```：在对应开放平台中配置好自己的回调URL；
- - ```第二步```：下载SDK：[Github][2]（目前仅支持JavaScript）；
- - ```第三步```：在开放平台中配置好的回调URL中调用后端SDK；
+ - ```第一步```：在对应开放平台中配置好自己的回调 URL；
+ - ```第二步```：下载SDK：[Github][2]（目前仅支持 JavaScript）；
+ - ```第三步```：在开放平台中配置好的回调 URL 中调用后端 SDK；
 
 ##### SDK OAuth验证使用说明
 
@@ -56,10 +56,10 @@ code            | message              | data
 
 ``` javascript
 let oauth = new OAuth({
-    type: 'github', //OAuth类型，目前支持github和wechat，小写
+    type: 'github', // OAuth 类型，目前支持 github 和 wechat，小写
     params: {
-        state: '' //Github传给您在Github OAuth设置中配置好的URL中的state参数
-        code: '' //Github传给您在Github OAuth设置中配置好的URL中的code参数
+        state: '' // 在 Github OAuth 设置中配置好的 URL 中的 state 参数
+        code: '' // 在 Github OAuth 设置中配置好的 URL 中的 code 参数
     }
 });
 
@@ -72,7 +72,7 @@ oauth.auth()
 });
 ```
 
-微信只需要把github换成wechat即可。
+微信只需要把 github 换成 wechat 即可。
 
   [1]: http://usercontents.authing.cn/docs/oauth/oauth_config.png
   [2]: https://github.com/Authing/authing-js-oauth
